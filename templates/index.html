@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Internal File Management</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <nav class="topbar">
+        <div class="brand">
+            <span class="brand-icon">IF</span>
+            <span>Internal Systems</span>
+        </div>
+        <span class="status"><span class="dot"></span> All systems operational</span>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">EMPLOYEE SERVICES</p>
+            <h1>File Management Portal</h1>
+            <p>
+                Access internal documentation and service information
+                through the company's file management system.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <div>
+                    <h2>Service information</h2>
+                    <p>System health and API reference</p>
+                </div>
+            </div>
+
+            <div class="grid">
+                <a class="card" href="/api/status">
+                    <span class="card-icon">01</span>
+                    <h3>Service status</h3>
+                    <p>View current service health and version information.</p>
+                    <span class="link-text">View status →</span>
+                </a>
+
+                <a class="card" href="/api/help">
+                    <span class="card-icon">02</span>
+                    <h3>API reference</h3>
+                    <p>Review the available service endpoints.</p>
+                    <span class="link-text">View reference →</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <div>
+                    <h2>Documentation library</h2>
+                    <p>Employee guides and service documents</p>
+                </div>
+            </div>
+
+            <div class="document-list">
+                <div class="document">
+                    <div>
+                        <strong>Employee User Guide</strong>
+                        <p>General information about the file service</p>
+                    </div>
+                    <div class="document-actions">
+                        <a href="/api/files?path=guide.txt">View</a>
+                        <a href="/api/download?file=guide.txt">Download</a>
+                    </div>
+                </div>
+
+                <div class="document">
+                    <div>
+                        <strong>Service README</strong>
+                        <p>Internal service overview</p>
+                    </div>
+                    <div class="document-actions">
+                        <a href="/api/files?path=readme.txt">View</a>
+                        <a href="/api/download?file=readme.txt">Download</a>
+                    </div>
+                </div>
+
+                <div class="document">
+                    <div>
+                        <strong>Changelog</strong>
+                        <p>Recent service updates</p>
+                    </div>
+                    <div class="document-actions">
+                        <a href="/api/files?path=changelog.txt">View</a>
+                        <a href="/api/download?file=changelog.txt">Download</a>
+                    </div>
+                </div>
+
+                <div class="document">
+                    <div>
+                        <strong>Frequently Asked Questions</strong>
+                        <p>Common questions about the service</p>
+                    </div>
+                    <div class="document-actions">
+                        <a href="/api/files?path=faq.txt">View</a>
+                        <a href="/api/download?file=faq.txt">Download</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <footer>
+            <span>Internal Systems</span>
+            <span>File Management API · v1.3.0</span>
+        </footer>
+    </main>
+</body>
+</html>

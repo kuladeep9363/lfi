@@ -1,0 +1,8 @@
+
+Frequently Asked Questions
+
+Q: How do I check the service status?
+A: Use the status endpoint.
+
+Q: Where can I find API documentation?
+A: Use the help endpoint.

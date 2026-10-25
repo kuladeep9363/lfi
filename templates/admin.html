@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administrator Portal</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <nav class="topbar">
+        <div class="brand">
+            <span class="brand-icon">IF</span>
+            <span>Internal Systems</span>
+        </div>
+        <span class="status">Restricted access</span>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">RESTRICTED AREA</p>
+            <h1>Administrator Portal</h1>
+            <p>Submit your administrator API key to access protected resources.</p>
+        </section>
+
+        <section class="section">
+            <div class="admin-panel">
+                <form method="POST" action="/api/admin/">
+                    <label for="api_key">Administrator API Key</label>
+                    <input
+                        type="password"
+                        id="api_key"
+                        name="api_key"
+                        placeholder="Enter API key"
+                        required
+                    >
+                    <button type="submit">Verify API Key</button>
+                </form>
+
+                {% if message %}
+                    <p role="status">{{ message }}</p>
+                {% endif %}
+
+                {% if flag %}
+                    <div class="flag-box">
+                        <h2>Access Granted</h2>
+                        <p>Your challenge flag:</p>
+                        <code>{{ flag }}</code>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+
+        <footer>
+            <span>Internal Systems</span>
+            <a href="/">Return to main portal</a>
+        </footer>
+    </main>
+</body>
+</html>

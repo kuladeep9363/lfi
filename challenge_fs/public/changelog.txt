@@ -1,0 +1,7 @@
+
+Version 1.3.0
+- Added document viewing functionality.
+- Updated administrator authentication.
+
+Version 1.2.0
+- Improved service status reporting.

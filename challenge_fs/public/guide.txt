@@ -1,0 +1,7 @@
+
+Internal File API - User Guide
+
+Welcome to the employee documentation service.
+
+Use /api/status to check the service health.
+Use /api/help to view API information.
