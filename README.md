@@ -30,9 +30,7 @@ lfi/
 │   ├── index.html
 │   └── admin.html
 ├── static/
-│   └── styles.css
-└── tests/
-    └── test\_app.py
+    └── styles.css
 ```
 
 ## Requirements
