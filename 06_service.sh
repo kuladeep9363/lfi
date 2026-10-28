@@ -81,15 +81,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y \
     acl \
     curl
 
-# --------------------------------------------------
-# 3) Back up any existing deployment
-# --------------------------------------------------
-if [[ -d "$DEST_DIR" ]]; then
-    BACKUP_DIR="$BACKUP_ROOT/$(date +%Y%m%d-%H%M%S)"
-    install -d -o root -g root -m 0700 "$BACKUP_ROOT" "$BACKUP_DIR"
-    cp -a "$DEST_DIR/." "$BACKUP_DIR/"
-    log_success "Existing deployment backed up to $BACKUP_DIR"
-fi
+
 
 # --------------------------------------------------
 # 4) Stop service before replacing files
@@ -199,7 +191,7 @@ curl --fail --silent \
 log_success "Deployment completed."
 
 echo
-echo "URL:       http://127.0.0.1:${PORT}/"
+echo "URL:       http://0.0.0.0:${PORT}/"
 echo "Config:    $CONFIG_FILE"
 echo "Flag:      $FLAG_FILE"
 echo "Service:   $SERVICE_NAME"
