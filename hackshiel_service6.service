@@ -1,0 +1,20 @@
+[Unit]
+Description=Hack and Shield - Service 6 Internal File API (LFI Lab)
+After=network.target
+
+[Service]
+Type=simple
+User=user6
+Group=user6
+WorkingDirectory=/opt/hackshield/services/service6
+ExecStart=/opt/hackshield/services/service6/.venv/bin/python /opt/hackshield/services/service6/app.py
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=multi-user.target
