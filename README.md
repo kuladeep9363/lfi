@@ -51,44 +51,6 @@ python app.py
 
 Flask listens on `127.0.0.1:5000`. Keep this terminal running.
 
-## Nginx setup
-
-Create `/etc/nginx/sites-available/lfi`:
-
-``` nginx
-server {
-    listen 80;
-    server\_name \_;
-    server\_tokens off;
-
-    location /static/ {
-        alias /home/tester/lfi/static/;
-        autoindex off;
-    }
-
-    location / {
-        proxy\_pass http://127.0.0.1:5000;
-        proxy\_http\_version 1.1;
-        proxy\_set\_header Host $host;
-        proxy\_set\_header X-Real-IP $remote\_addr;
-        proxy\_set\_header X-Forwarded-For $proxy\_add\_x\_forwarded\_for;
-        proxy\_set\_header X-Forwarded-Proto $scheme;
-    }
-}
-```
-
-Replace `/home/tester/lfi/static/` with the actual absolute path to
-this project's `static/` directory. Enable and start Nginx:
-
-``` bash
-sudo ln -s /etc/nginx/sites-available/lfi /etc/nginx/sites-enabled/lfi
-sudo rm -f /etc/nginx/sites-enabled/default
-sudo nginx -t
-sudo systemctl enable --now nginx
-```
-
-If Nginx is already running after a configuration edit, use
-`sudo systemctl reload nginx`.
 
 ## Vulnerability
 
